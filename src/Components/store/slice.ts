@@ -1,5 +1,5 @@
 // @ts-nocheck 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit";
 import productdata from "../product/product";   
 const initialState = {
 items : productdata,
@@ -12,7 +12,7 @@ export const cartslice = createSlice({
     initialState,
     reducers:{
         addtocart:(state,action)=>{
-            let find = state.cart.findIndex((item)=> item.id== action.payload.id)
+            let find = state.cart.findIndex((item)=> item.id === action.payload.id)
             if(find >=0){
                 state.cart[find].quantity +=1
             }
@@ -43,7 +43,7 @@ return carttotal
         },
         increment : (state,action)=>{
 state.cart = state.cart.map((item)=>{
-    if(item.id ===action.payload ){
+    if(item.id === action.payload ){
     return {...item,quantity : item.quantity + 1 }
     }
     return item

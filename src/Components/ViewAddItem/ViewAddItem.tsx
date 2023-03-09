@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { decrement, increment, removeitem, TotalAmount } from "../store/slice";
 import { RootState } from "../store/store";
 function ViewAddItem(){
- const{cart,totalquantity,totalprice,} =  useSelector((state : RootState) => state.allcart)
+ const{cart} =  useSelector((state : RootState) => state.allcart)
    const dispatch = useDispatch()
   dispatch(TotalAmount())
 return(

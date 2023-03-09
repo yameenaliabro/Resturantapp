@@ -2,7 +2,6 @@ import image from "./Img/1.jpg"
 import image2 from "./Img/2.jpg"
 import image3 from "./Img/3.jpg"
 import image4 from "./Img/4.jpg"
-import image5 from "./Img/5.jpg"
 let productdata = [
     {
         id : 1,

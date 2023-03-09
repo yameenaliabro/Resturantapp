@@ -1,5 +1,5 @@
 import { useEffect,useState} from 'react';
- import { getAuth, onAuthStateChanged,signOut} from 'firebase/auth';
+ import { getAuth, onAuthStateChanged} from 'firebase/auth';
 import { ConfigProvider, Spin } from 'antd';  
 import { app } from "../Firebase/Firebase"
 import Login from '../Loginpage/Login';

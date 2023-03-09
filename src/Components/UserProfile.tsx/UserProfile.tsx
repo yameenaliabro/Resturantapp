@@ -1,4 +1,3 @@
-import { Upload } from "antd";
 import { getAuth, signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
