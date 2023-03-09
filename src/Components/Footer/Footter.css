@@ -1,0 +1,40 @@
+.back{
+    background-color: rgb(208, 0, 255);
+    color: #fff;
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+ }
+ .first-row{
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ list-style: none;
+ margin-top: 50px;
+ }
+ .first-row img{
+     width: 200px;
+ }
+ .first-row p{
+     cursor: pointer;
+ }   
+ .first-row b{
+     cursor: pointer;
+ }
+ .first-row button{
+     border: none;
+     border-radius: 4px;
+ }
+ .first-row button img:hover{
+     opacity: 10;
+ }
+ .photo{
+     display:flex;
+     justify-content: center;
+     justify-content: space-around;
+    margin-top: 10px;
+ }
+ .photo img{
+     width:30px;
+     cursor: pointer;
+ }
