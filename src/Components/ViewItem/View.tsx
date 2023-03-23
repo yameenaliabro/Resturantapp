@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import {Modal} from "antd"
 import { useState } from "react";
-import ViewAddItem from "../ViewAddItem/ViewAddItem";
+import ViewAddItem from "../CartData/ViewAddItem/ViewAddItem";
 function View(){
     const[open,setOpen] = useState<boolean>(false)
     let done = ()=>{

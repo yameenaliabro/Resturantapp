@@ -1,9 +1,9 @@
 import { useEffect,useState} from 'react';
- import { getAuth, onAuthStateChanged} from 'firebase/auth';
+ import { getAuth, onAuthStateChanged,signOut} from 'firebase/auth';
 import { ConfigProvider, Spin } from 'antd';  
-import { app } from "../Firebase/Firebase"
+import { app } from "../../Firebasedatabase/Firebase/Firebase"
 import Login from '../Loginpage/Login';
-import CartPage from '../Card2/CartPage';
+import CartPage from '../../Homepage/Card2/CartPage';
    function UserConfiram(){ 
     let auth = getAuth(app);
   const[user,setsuse] = useState<any>(null)
@@ -42,8 +42,8 @@ import CartPage from '../Card2/CartPage';
   }
  if(user === null){   
   return(
-     <div>  
-        <Login/>
+     <div> 
+      <Login/> 
      </div>
   )
 }   

@@ -1,6 +1,6 @@
 // @ts-nocheck 
 import { createSlice} from "@reduxjs/toolkit";
-import productdata from "../product/product";   
+import productdata from "../../Homepage/product/product";   
 const initialState = {
 items : productdata,
 cart:[],

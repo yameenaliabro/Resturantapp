@@ -3,16 +3,16 @@ import { Link, Outlet, useParams } from "react-router-dom";
 import "./Login.css"
 import { useRef,useState } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "../Firebase/Firebase";
+import { auth, db } from "../../Firebasedatabase/Firebase/Firebase";
 import { addDoc, collection } from "firebase/firestore";
-import View from "../ViewItem/View";
+import View from "../../ViewItem/View";
 function Login(){
     const[spin,setspin] = useState<boolean>(false) 
     let ref1 = useRef<InputRef>(null)
     let ref2 = useRef<InputRef>(null)
     let ref3 = useRef<InputRef>(null)
     let ref4 = useRef<InputRef>(null)
-    let Signin= async()=>{
+    let Signin = async()=>{
         setspin(true)
         let Name  = ref1.current!.input!.value
         let Number  = ref2.current!.input!.value
@@ -44,11 +44,19 @@ function Login(){
             backgroundColor  :"#efefef",
             padding:20,
             marginBottom :100,
-        }}>
-            <Form.Item>
-                <label color="white"> Name</label>
-                <Input type="text" placeholder="Name" ref={ref1}/>
-            </Form.Item>
+        }}
+        >
+            <Form.Item
+                name="username"
+                rules={[
+                  { required: true, message: "User Name is required" },
+                  {  message: "Please enter a valid user name" },
+                  {
+                    min: 5, 
+                    message: "Username must be minimum 5 characters.",
+                  },
+                ]}
+              ></Form.Item>
             <Form.Item>
                 <label >Number</label>
                 <Input placeholder="Enter Number" ref={ref2} maxLength={11} />
@@ -62,13 +70,13 @@ function Login(){
                 <Input type="password" placeholder="Email Password" ref={ref4}/>
             </Form.Item>
             <Form.Item>
-               <Button type="primary" block onClick={Signin}>Sign Up</Button>
+               <Button type="primary"   block onClick={Signin}>Sign Up</Button>
             </Form.Item>
             <Form.Item>
               <Link to="/signin"><Button type="link" block style={{
                 color : "blue"
                }}>Already ?Account Create in Sign in</Button></Link>
-            </Form.Item>
+            </Form.Item>  
         </Form>
         </Spin>
         </div>

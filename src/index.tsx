@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { stor } from './Components/store/store';
 import {BrowserRouter} from "react-router-dom"
+import { stor } from './Components/Reduxe/store/store';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 root.render(
-  
+
   <React.StrictMode>
     <Provider store={stor}>
       <BrowserRouter>

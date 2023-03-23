@@ -1,5 +1,3 @@
-import React from 'react';
-import imagecard from "./Img/1.jpg"
 import {
   MDBCard,
   MDBCardBody,
@@ -14,22 +12,22 @@ import {
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
-import { addtocart } from '../store/slice';
 import { ToastContainer, toast } from 'react-toastify';
+import { RootState } from '../../Reduxe/store/store';
+import { addtocart } from '../../Reduxe/store/slice';
 export default function Card2() {
     let dispatch = useDispatch()
     let items = useSelector((state : RootState) => state.allcart)
     let data2 = items.items
   return (
     <div className='d-flex justify-content-around flex-wrap-wrap  d-inline-flex'>
-        {data2.map((item) =>{
+        {data2.map((item:any) =>{
             return(
              <MDBContainer className='mt-5'>
              <MDBRow className='mb-3'>
                  <MDBCol size="md">
          <MDBCard >
-       <MDBCardImage src={item.img}position='top' alt='...' />
+       <MDBCardImage src={item.img} position='top' alt='...' />
        <MDBCardBody>
          <MDBCardTitle>Card title</MDBCardTitle>
          <MDBCardText>

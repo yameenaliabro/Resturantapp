@@ -1,8 +1,8 @@
 import { getAuth, signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import { app } from "../Firebase/Firebase";
-import { RootState } from "../store/store";
+import { app } from "../Firebasedatabase/Firebase/Firebase";
+import { RootState } from "../Reduxe/store/store";
 import "./UserProfile.css"
 function UserProfile(){
  const{cart,totalquantity,totalprice,} =  useSelector((state : RootState) => state.allcart)
@@ -16,7 +16,7 @@ return(
         backgroundColor : "#eee"
     }}>
   <div className="container py-5 h-100">
-    <div className="row d-flex justify-content-center align-items-center h-100">
+    <div className="ow d-flex justify-content-center align-items-center h-100">
       <div className="col-md-12 col-xl-4">
 
         <div className="card" style={{
@@ -26,7 +26,7 @@ return(
             <div className="mt-3 mb-4">
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
                 className="rounded-circle img-fluid" style={{
-                    width :100 
+                    width :100  
                 }} />
             </div>
             <h4 className="mb-2">Julie L. Arsenault</h4>

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { decrement, increment, removeitem, TotalAmount } from "../store/slice";
-import { RootState } from "../store/store";
+import { decrement, increment, removeitem, TotalAmount } from "../../Reduxe/store/slice";
+import { RootState } from "../../Reduxe/store/store";
 function CartPage(){
  const{cart,totalquantity,totalprice,} =  useSelector((state : RootState) => state.allcart)
    const dispatch = useDispatch()

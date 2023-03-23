@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {Link, Outlet} from "react-router-dom"
-import { TotalAmount } from "../store/slice";
-import { RootState } from "../store/store";
+import { TotalAmount } from "../../Reduxe/store/slice";
+import { RootState } from "../../Reduxe/store/store";
 function Navbar(){
     let {cart,totalquantity} = useSelector((state : RootState) => state.allcart)
    let dispatch =  useDispatch()
@@ -33,16 +33,13 @@ return(
           >
                     <i className="fas fa-shopping-cart fa-2x"></i>
             <span className="badge rounded-pill badge-notification bg-danger">({totalquantity})</span>
-          </a></Link>,
-        <li className="nav-item me-3 me-lg-0">
-          <a className="nav-link" href="#"><i className="fab fa-twitter"></i></a>
-        </li>
+          </a></Link>
       </ul>
       <form className="w-auto">
         <input
           type="search"
           className="form-control"
-          placeholder="Type query"
+          placeholder="Search Product"
           aria-label="Search"
         />
       </form>

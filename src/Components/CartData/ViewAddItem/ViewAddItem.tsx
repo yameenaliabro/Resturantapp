@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { decrement, increment, removeitem, TotalAmount } from "../store/slice";
-import { RootState } from "../store/store";
+import { decrement, increment, removeitem, TotalAmount } from "../../Reduxe/store/slice";
+import { RootState } from "../../Reduxe/store/store";
 function ViewAddItem(){
  const{cart} =  useSelector((state : RootState) => state.allcart)
    const dispatch = useDispatch()
@@ -19,7 +19,6 @@ return(
           <div className="card-body">
                { cart ? cart.map((data:any)=>(
                 <div className="row">
-            
                 <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
                   <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                     <img src={data.img}
