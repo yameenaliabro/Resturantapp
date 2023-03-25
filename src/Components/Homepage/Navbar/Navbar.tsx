@@ -13,10 +13,10 @@ function Navbar(){
    },[cart])
 return(
     <div>
-<nav className="navbar navbar-expand-lg bg-light navbar-light">
+<nav className="navbar navbar-expand-lg bg-red navbar-light">
+
   <div className="container-fluid">
-  <Link to="/"><a className="navbar-brand">Home</a></Link>
-  <Link to="/Profile"><a className="navbar-brand">User</a></Link>
+  <Link to="/"><a className="navbar-brand " color="white">Home</a></Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item dropdown">

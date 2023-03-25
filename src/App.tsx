@@ -14,10 +14,7 @@ export default function App() {
        element: <Navbar />,
        children: [
          { index: true, element: <Home /> },
-         {
-           path: "/profile",
-           element: <UserProfile />
-         },
+         
          {
            path : "/cart",
            element: <CartPage/>,

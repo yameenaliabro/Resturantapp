@@ -24,19 +24,19 @@ function Login(){
             alert("something went wrong please try again")
         })
         try{
-        const docRef = await addDoc(collection(db, "users"), {
+        const docRef = await addDoc(collection(db, `${Name}`), {
             Name: Name,
             Number: Number,
           });
-          message.success("your sucessfull setup ")
+          message.success("your sucessfull login")
           setspin(false)
         }catch (e) {
-          console.error("Error adding document: ", e);
+          message.error("Some thing went wrong")
+          
         }
     }
     return(
         <div>
-            <View/>
         <div className="container">
           <Spin spinning={spin}>
         <Form style={{
@@ -46,17 +46,7 @@ function Login(){
             marginBottom :100,
         }}
         >
-            <Form.Item
-                name="username"
-                rules={[
-                  { required: true, message: "User Name is required" },
-                  {  message: "Please enter a valid user name" },
-                  {
-                    min: 5, 
-                    message: "Username must be minimum 5 characters.",
-                  },
-                ]}
-              ></Form.Item>
+            <Form.Item></Form.Item>
             <Form.Item>
                 <label >Number</label>
                 <Input placeholder="Enter Number" ref={ref2} maxLength={11} />

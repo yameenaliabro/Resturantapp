@@ -21,11 +21,11 @@ export default function Card2() {
     let data2 = items.items
   return (
     <div className='d-flex justify-content-around flex-wrap-wrap  d-inline-flex'>
-        {data2.map((item:any) =>{
+        {data2.map((item) =>{
             return(
              <MDBContainer className='mt-5'>
              <MDBRow className='mb-3'>
-                 <MDBCol size="md">
+                 <MDBCol size="md" key={item.id}>
          <MDBCard >
        <MDBCardImage src={item.img} position='top' alt='...' />
        <MDBCardBody>
@@ -57,5 +57,6 @@ export default function Card2() {
             )
         })}
     </div>
+    
   );
 }
