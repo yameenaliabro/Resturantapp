@@ -46,7 +46,10 @@ function Login(){
             marginBottom :100,
         }}
         >
-            <Form.Item></Form.Item>
+           <Form.Item>
+                <label >Name</label>
+                <Input placeholder="Enter FullName" ref={ref1} maxLength={11} />
+            </Form.Item>
             <Form.Item>
                 <label >Number</label>
                 <Input placeholder="Enter Number" ref={ref2} maxLength={11} />

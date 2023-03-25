@@ -1,0 +1,7 @@
+.theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+     height: 750px;
+}

@@ -1,79 +1,55 @@
-import { Button, Form, Input, message } from "antd";
-import { Outlet, useNavigate } from "react-router-dom";
-const SignIn = () => {
-    let navigate = useNavigate();
-  return (
-    <>
-      <div className="signin">
-        <section className="signin__main">
-          <div className="signin__body">
-            <h2>Login</h2>
-            <Form
-              wrapperCol={{
-                span: 24,
-              }}
-              layout="horizontal"
-              size="large"
-              style={{
-                maxWidth: 400,
-                width: "100%",
-              }}
-            >
-              {/* <Form.Item
-                name="email"
-                rules={[
-                  { required: true, message: "Email is required" },
-                  { type: "email", message: "Please enter a valid email" },
-                ]}
-              >
-                <Input placeholder="Email" />
-              </Form.Item> */}
-              <Form.Item
-                name="username"
-                rules={[
-                  { required: true, message: "User Name is required" },
-                  {  message: "Please enter a valid user name" },
-                  {
-                    min: 5, 
-                    message: "Username must be minimum 5 characters.",
-                  },
-                ]}
-              >
-                <Input placeholder="User Name" type="text" />
-              </Form.Item>
-              <Form.Item
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Password is required",
-                    whitespace: true,
-                  },
-                  { min: 6, message: "Password must be at least 6 characters" },
-                ]}
-              >
-                <Input.Password placeholder="Password" />
-              </Form.Item>
-
-              <Form.Item className="form-item-button">
-                <Button type="primary" htmlType="submit" >
-                  Sign In
-                </Button>
-              </Form.Item>
-            </Form>
-            <Button
-              onClick={() => navigate("/signup")}
-              type="link"
-              className=""
-            >
-              Create Account
-            </Button>
-          </div>
-        </section>
-        <Outlet/>
-      </div>
-    </>
-  );
-};
-
+import {signInWithPopup,GoogleAuthProvider, signInWithEmailAndPassword} from "firebase/auth";
+import {Button, Form, Input, InputRef, message, Spin} from "antd"
+import { useState,useRef } from "react";
+import "./Signin.css"
+import { auth } from "../../Firebasedatabase/Firebase/Firebase";
+let provider = new GoogleAuthProvider();
+function SignIn(){
+    let ref1 = useRef<InputRef>(null)
+    let ref2 = useRef<InputRef>(null)
+    let gogle = ()=>{
+   signInWithPopup(auth,provider).then(()=>{
+    message.success("login sucess")
+   })
+    }
+    let[spin,setspin] = useState(false);
+    let submit = ()=>{
+    setspin(true);
+    let email  = ref1.current!.input!.value
+    let pasword = ref2.current!.input!.value 
+signInWithEmailAndPassword(auth,email,pasword).then(()=>{
+    setspin(false);    
+}).catch(()=>{
+    setspin(false)
+         message.error(" Some thing Went Wrong please try again")
+})}
+return(
+    <div className="theme" >
+    <div>
+        <Spin  spinning={spin}>
+        <Form style={{
+           backgroundColor:"rgba(255, 255, 255, 0.815)",
+           display : "inline-block",
+           padding:20,
+           height : 280
+        }}>
+        <Input type="email" width={20} placeholder="Enter adress " style={{
+            width:300,
+        }} 
+        ref={ref1}/><br/><br/>
+        <Input type={"password"} width={20} placeholder="Enter  Password"
+         style={{
+            width:300,
+        }} 
+        ref={ref2} /><br/><br/>
+        <Button onClick={submit} type="primary"  block>Login</Button>  
+        <Button onClick={gogle} type="primary"  block style={{
+            marginTop:20
+        }}>Login With Google</Button>
+        </Form>
+</Spin>
+    </div>
+    </div>
+)
+}
 export default SignIn;

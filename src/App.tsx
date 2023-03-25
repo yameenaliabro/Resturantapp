@@ -5,8 +5,6 @@ import CartPage from "./Components/Homepage/Card2/CartPage";
 import Home from "./Components/Homepage/Home";
 import Navbar from "./Components/Homepage/Navbar/Navbar";
 import UserConfiram from "./Components/Auth/State/State";
-import UserProfile from "./Components/UserProfile.tsx/UserProfile";
-
 export default function App() {
    let routes: RouteObject[] = [
      {
