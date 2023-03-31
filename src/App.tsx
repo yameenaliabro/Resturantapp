@@ -5,6 +5,9 @@ import CartPage from "./Components/Homepage/Card2/CartPage";
 import Home from "./Components/Homepage/Home";
 import Navbar from "./Components/Homepage/Navbar/Navbar";
 import UserConfiram from "./Components/Auth/State/State";
+import "./App.css"
+import Login from "./Components/Auth/Loginpage/Login";
+import FodCategeory from "./Components/Categeory/CategeoryFood/FoodCategeory";
 export default function App() {
    let routes: RouteObject[] = [
      {
@@ -12,19 +15,26 @@ export default function App() {
        element: <Navbar />,
        children: [
          { index: true, element: <Home /> },
-         
          {
            path : "/cart",
            element: <CartPage/>,
          },
          {
            path : "/login",
-           element: <UserConfiram/>,
+           element: <Login/>,
          },
          {
            path : "/signin",
            element: <SignIn/>,
-       }
+       },
+       {
+        path : "/login",
+        element: <Login/>,
+    },
+    {
+      path : "/Food/like",
+      element: <FodCategeory/>,
+  }
      ],
      },
    ];

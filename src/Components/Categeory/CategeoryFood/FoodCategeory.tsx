@@ -4,11 +4,10 @@ import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { RootState } from '../../Reduxe/store/store';
 import { addtocart } from '../../Reduxe/store/slice';
-import "./Card.css"
+import "./Food.css"
 import { Button, Card, Image, Rate } from 'antd';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-export default function Card2() {
+export default function FodCategeory() {
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 const [value, setValue] = useState<number>(3);
     let dispatch = useDispatch()
@@ -27,10 +26,10 @@ const [value, setValue] = useState<number>(3);
           marginTop:50,
           width:340
         }}>
-          <Link to="/Food/like"><Image src={item.img} style={{
+          <Image src={item.img} style={{
             height:200,
             width:290
-          }}/></Link> 
+          }}/>
           <p>{item.title}</p>
           <strong>Rs-{item.price}</strong>
           <p>{item.quantity}</p>

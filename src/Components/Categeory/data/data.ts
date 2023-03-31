@@ -25,23 +25,20 @@ quantity:1
   id : 1,
   title : "this is a man a Burger",
   price : 200,
-img : image3,
+img : "images.deliveryhero.io/image/fd-pk/LH/ucfe-listing.jpg?width=400&height=292",
 quantity:1
-
 },  {
   id : 1,
   title : "this is a man a Burger",
   price : 200,
 img : image4,
 quantity:1
-
 },  {
   id : 1,
   title : "this is a man a Burger",
   price : 200,
 img : image5,
 quantity:1
-
 },
 {
     id : 2,

@@ -1,0 +1,11 @@
+.containe{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.set-heading{
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+}

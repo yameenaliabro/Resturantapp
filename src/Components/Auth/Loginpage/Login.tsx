@@ -1,12 +1,12 @@
 import { Button, Form, Input, InputRef, message, Spin } from "antd";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import "./Login.css"
 import { useRef,useState } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../Firebasedatabase/Firebase/Firebase";
 import { addDoc, collection } from "firebase/firestore";
-import View from "../../ViewItem/View";
 function Login(){
+    let navigate = useNavigate();
     const[spin,setspin] = useState<boolean>(false) 
     let ref1 = useRef<InputRef>(null)
     let ref2 = useRef<InputRef>(null)
@@ -27,12 +27,13 @@ function Login(){
         const docRef = await addDoc(collection(db, `${Name}`), {
             Name: Name,
             Number: Number,
-          });
-          message.success("your sucessfull login")
-          setspin(false)
+          }).then(()=>{
+            message.success("your sucessfull login")
+            setspin(false)
+            navigate("/")
+          })
         }catch (e) {
           message.error("Some thing went wrong")
-          
         }
     }
     return(
