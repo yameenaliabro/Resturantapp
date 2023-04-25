@@ -3,10 +3,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 150px;
 }
 .set-heading{
     color: #fff;
     text-align: center;
     margin-top: 30px;
+}
+.set-footer{
+    margin-top: 300px;
 }

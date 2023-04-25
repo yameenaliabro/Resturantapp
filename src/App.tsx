@@ -4,10 +4,12 @@ import SignIn from "./Components/Auth/Signin/Signin";
 import CartPage from "./Components/Homepage/Card2/CartPage";
 import Home from "./Components/Homepage/Home";
 import Navbar from "./Components/Homepage/Navbar/Navbar";
-import UserConfiram from "./Components/Auth/State/State";
 import "./App.css"
 import Login from "./Components/Auth/Loginpage/Login";
-import FodCategeory from "./Components/Categeory/CategeoryFood/FoodCategeory";
+import BurgerCategeory from "./Components/Categeory/Burger/Burger";
+import SnackCategeory from "./Components/Categeory/Snack/Snack";
+import VegatableCategeory from "./Components/Categeory/Vegatable/Vegatable";
+import MyComponent from "./Components/Card4/Card23";
 export default function App() {
    let routes: RouteObject[] = [
      {
@@ -32,16 +34,24 @@ export default function App() {
         element: <Login/>,
     },
     {
-      path : "/Food/like",
-      element: <FodCategeory/>,
-  }
+      path : "/check/spicy/burger",
+      element: <BurgerCategeory/>,
+  },
+  {
+    path : "/check/snack/food",
+    element: <SnackCategeory/>,
+},
+{
+  path : "/check/fresh/vegtable",
+  element: <VegatableCategeory/>,
+}
      ],
      },
    ];
    let element = useRoutes(routes);
   return (
     <div>
-      {element}
+      <MyComponent/>
     </div>
   );
 }

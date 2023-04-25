@@ -6,7 +6,7 @@ import image5 from "./Img/5.jpg"
 import image6 from "./Img/6.jpg"
 import image7 from "./Img/7.jpg"
 import image8 from "./Img/8.jpg"
-let productdata = [
+let Snackdata= [
     {
         id : 1,
         title : "this is a man a Burger",
@@ -27,12 +27,14 @@ quantity:1
   price : 200,
 img : image3,
 quantity:1
+
 },  {
   id : 1,
   title : "this is a man a Burger",
   price : 200,
 img : image4,
 quantity:1
+
 },  {
   id : 1,
   title : "this is a man a Burger",
@@ -61,4 +63,4 @@ img : image8,
 quantity:1
 },
 ]
-export default productdata
+export default Snackdata

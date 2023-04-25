@@ -34,7 +34,7 @@ return(
         <Spin spinning={spin}>
         <Title level={2} style={{
             marginBottom:50,
-            color: "blue"
+            color: "#fff"
         
         }}>Enter A FeedBack</Title>
         <Form style={{

@@ -1,25 +1,21 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-import { RootState } from '../../Reduxe/store/store';
-import { addtocart } from '../../Reduxe/store/slice';
-import "./Food.css"
+import "./burger.css"
 import { Button, Card, Image, Rate } from 'antd';
 import { useState } from 'react';
-export default function FodCategeory() {
+import productdata from '../data/data';
+import Footer from "../../Homepage/Footer/Footer"
+import Meta from 'antd/es/card/Meta';
+export default function BurgerCategeory() {
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 const [value, setValue] = useState<number>(3);
-    let dispatch = useDispatch()
-    let items = useSelector((state : RootState) => state.allcart)
-    let data2 = items.items
   return (
     <div>
       <div className='set-heading'>
-      <h2 >Products</h2>
+      <h2>Burgers</h2>
       </div>
     <div className='containe'>
-   {data2.map((item)=>{
+   {productdata.map((item)=>{
     return(
       <div>
         <Card style={{
@@ -30,7 +26,7 @@ const [value, setValue] = useState<number>(3);
             height:200,
             width:290
           }}/>
-          <p>{item.title}</p>
+          <Meta description={item.title}/>
           <strong>Rs-{item.price}</strong>
           <p>{item.quantity}</p>
           <span>
@@ -38,7 +34,6 @@ const [value, setValue] = useState<number>(3);
       {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
     </span><br/><br/>
           <Button  type="primary" onClick={()=>{
-            dispatch(addtocart(item))
            toast('Product Added to Cart!', {
         position: "top-right",
         autoClose: 5000,

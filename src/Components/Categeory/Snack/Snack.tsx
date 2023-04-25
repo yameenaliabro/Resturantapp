@@ -1,25 +1,20 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-import { RootState } from '../../Reduxe/store/store';
-import { addtocart } from '../../Reduxe/store/slice';
-import "./Card.css" 
+import "./snack.css"
 import { Button, Card, Image, Rate } from 'antd';
 import { useState } from 'react';
-export default function Card2() {
+import Footer from "../../Homepage/Footer/Footer"
+import Snackdata from './Snackdata/Snackdata';
+export default function SnackCategeory() {
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 const [value, setValue] = useState<number>(3);
-    let dispatch = useDispatch()
-    let items = useSelector((state : RootState) => state.allcart)
-    let data2 = items.items
   return (
     <div>
       <div className='set-heading'>
-      <h2>Products</h2>
+      <h2>SnackFood</h2>
       </div>
     <div className='containe'>
-   {data2.map((item)=>{
+   {Snackdata.map((item)=>{
     return(
       <div>
         <Card style={{
@@ -38,22 +33,24 @@ const [value, setValue] = useState<number>(3);
       {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}
     </span><br/><br/>
           <Button  type="primary" onClick={()=>{
-            dispatch(addtocart(item))
-            toast('Product Added to Cart!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+           toast('Product Added to Cart!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
          }}>AddToCart</Button>
          <ToastContainer/>
         </Card>
       </div>
     )
    })}
+    </div>
+    <div className='set-footer'>
+    <Footer/>
     </div>
     </div>
   
