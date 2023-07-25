@@ -45,7 +45,7 @@ return(
         <Button onClick={submit} type="primary"  block>Login</Button>  
         <Button onClick={gogle} type="primary"  block style={{
             marginTop:20
-        }}>Login With Google</Button>
+        }}>Login With Google</Button>   
         </Form>
 </Spin>
     </div>

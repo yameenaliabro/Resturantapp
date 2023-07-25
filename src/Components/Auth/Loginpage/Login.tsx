@@ -41,13 +41,13 @@ function Login(){
         <div className="container">
           <Spin spinning={spin}>
         <Form style={{
-            maxWidth:400 ,
+            maxWidth:400,
             backgroundColor  :"#efefef",
             padding:20,
             marginBottom :100,
         }}
         >
-           <Form.Item>
+           <Form.Item >
                 <label >Name</label>
                 <Input placeholder="Enter FullName" ref={ref1} maxLength={11} />
             </Form.Item>
